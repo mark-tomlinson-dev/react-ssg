@@ -30,8 +30,8 @@ fs.readdir(pagesDir, (err, files) => {
                         React.createElement(Component.default)
                     );
                     const document = generateTemplate(pageName, html);
-                    // Determine the output path based on the page name
 
+                    // Determine the output path based on the page name
                     if (document) {
                         const outputPath =
                             pageName.toLowerCase() === 'index'
