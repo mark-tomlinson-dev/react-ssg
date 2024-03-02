@@ -1,27 +1,29 @@
 {
-  "name": "react-ssg",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel components --out-dir lib --extensions \".jsx,.js\" && node build.js",
-    "start": "serve -s build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-dom-server": "^0.0.5"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.23.9",
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "@babel/preset-react": "^7.23.3",
-    "serve": "^14.2.1"
-  }
+    "name": "react-ssg",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:jsx": "babel src/pages --out-dir ./lib --extensions '.jsx','.js' --copy-files",
+        "build:html": "node build.js",
+        "build": "npm run build:jsx && npm run build:html",
+        "start": "http-server ./build -o"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "http-server": "^14.1.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-dom-server": "^0.0.5"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.9",
+        "@babel/core": "^7.24.0",
+        "@babel/preset-env": "^7.24.0",
+        "@babel/preset-react": "^7.23.3"
+    }
 }
