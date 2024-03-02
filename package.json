@@ -8,7 +8,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build:jsx": "babel src/pages --out-dir ./lib --extensions '.jsx','.js' --copy-files",
         "build:html": "node build.js",
-        "build": "npm run build:jsx && npm run build:html",
+        "build:css": "cp src/styles/style.css build/style.css",
+        "build": "pnpm run build:jsx && pnpm run build:css && pnpm run build:html ",
         "start": "http-server ./build -o"
     },
     "keywords": [],
